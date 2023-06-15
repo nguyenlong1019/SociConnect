@@ -26,13 +26,13 @@ SECRET_KEY = 'django-insecure-#xb9et(66=hni&w+&(=*qh#%6+8gj2$12&!_##l13k-yma8u=6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://web-production-462f.up.railway.app/", "web-production-462f.up.railway.app"]
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CSRF_TRUSTED_ORIGINS = ['https://site.lv', 'https://www.site.lv']
+CSRF_TRUSTED_ORIGINS = ["https://web-production-462f.up.railway.app/", "web-production-462f.up.railway.app"]
 
 # Application definition
 
@@ -151,5 +151,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if not DEBUG:
-    MEDIA_URL = 'http://mywebsite.com.com/media/'
-    MEDIA_ROOT = '/media/' 
+    MEDIA_URL = 'https://web-production-462f.up.railway.app/media/'
+    MEDIA_ROOT = 'https://web-production-462f.up.railway.app/media/' 
