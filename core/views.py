@@ -12,6 +12,7 @@ import random
 def index(request):
     user_object = User.objects.get(username=request.user.username)
     user_profile = get_object_or_404(Profile, user=user_object)
+    user_posts = Post.objects.filter(user=user_object)
 
     user_following_list = []
     feed = []
@@ -54,7 +55,7 @@ def index(request):
 
     posts = Post.objects.all()
     print(posts)
-    return render(request, 'index.html', {'user_profile': user_profile, 'posts': feed_list, 'suggestions_username_profile_list':suggestions_username_profile_list[:4]})
+    return render(request, 'index.html', {'user_posts': user_posts,'user_profile': user_profile, 'posts': feed_list, 'suggestions_username_profile_list':suggestions_username_profile_list[:4]})
 
 
 @login_required(login_url='signin')
