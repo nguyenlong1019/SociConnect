@@ -255,5 +255,5 @@ def logout(request):
     return redirect('signin')
 
 
-# def notfound(request):
-#     return render(request, '404.html')
+def handling_404(request, exception):
+    return render(request, '404.html', {})

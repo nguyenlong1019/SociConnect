@@ -28,6 +28,11 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CSRF_TRUSTED_ORIGINS = ['https://site.lv', 'https://www.site.lv']
 
 # Application definition
 
@@ -90,9 +95,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': '4BEAFlt7CVCUeaQZTRLE',
-        'HOST': 'containers-us-west-171.railway.app',
-        'PORT': '7411'
+        'PASSWORD': 'd6NphME5TdPP9i70n4NF',
+        'HOST': 'containers-us-west-39.railway.app',
+        'PORT': '5661'
     }
 }
 
@@ -123,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Ho_Chi_Minh'
 
 USE_I18N = True
 
@@ -144,3 +149,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if not DEBUG:
+    MEDIA_URL = 'http://mywebsite.com.com/media/'
+    MEDIA_ROOT = '/media/' 

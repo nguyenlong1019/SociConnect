@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.views import defaults as default_views
 
-handler404 = default_views.page_not_found
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('settings', views.settings, name='settings'),
